@@ -26,6 +26,11 @@ public class Employee implements Serializable {
 
     private String desc;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    public enum Role{admin,normal}
+
     protected Employee(){
 
     }
@@ -60,6 +65,10 @@ public class Employee implements Serializable {
         this.desc = desc;
     }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     public String getId() {
         return id;
     }
@@ -74,6 +83,10 @@ public class Employee implements Serializable {
 
     public String getDesc() {
         return desc;
+    }
+
+    public Role getRole() {
+        return role;
     }
 
     public boolean isMatchUser(String password){
