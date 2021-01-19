@@ -22,7 +22,7 @@ public class LoginController {
      *
      * @return 页面url
      */
-    @GetMapping("/login")
+    @GetMapping({"/","/login"})
     public String login() {
         return "login";
     }

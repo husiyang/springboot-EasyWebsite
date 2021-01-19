@@ -6,6 +6,7 @@ import org.springframework.util.DigestUtils;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 
 
 @Entity
@@ -26,10 +27,8 @@ public class Employee implements Serializable {
 
     private String desc;
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
-    public enum Role{admin,normal}
+    @ManyToMany
+    private Collection<Role> roles;
 
     protected Employee(){
 
@@ -65,9 +64,7 @@ public class Employee implements Serializable {
         this.desc = desc;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
+    public void setRole(Collection<Role> roles){this.roles = roles;}
 
     public String getId() {
         return id;
@@ -85,9 +82,8 @@ public class Employee implements Serializable {
         return desc;
     }
 
-    public Role getRole() {
-        return role;
-    }
+    public Collection<Role> getRole(){return roles;}
+
 
     public boolean isMatchUser(String password){
         return this.password.equals(encodeByMD5(password));
