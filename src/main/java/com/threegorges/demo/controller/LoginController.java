@@ -1,5 +1,6 @@
 package com.threegorges.demo.controller;
 
+import com.threegorges.demo.domain.CurrentEmployee;
 import com.threegorges.demo.domain.Employee;
 import com.threegorges.demo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,9 @@ public class LoginController {
         Employee employee = new Employee(username);
         employee.setPassword(password);
         if (employeeRepository.findByUsername(employee).isMatchUser(password)) {
-            httpSession.setAttribute("loginEmployee", employee);
+            httpSession.setAttribute("loginEmployee", new CurrentEmployee(employee));
+            CurrentEmployee currentEmployee = (CurrentEmployee) httpSession.getAttribute("loginEmployee");
+            currentEmployee.setModel(model);
             return "redirect:/user";
         } else {
             model.addAttribute("msg", "incorrect username or password");

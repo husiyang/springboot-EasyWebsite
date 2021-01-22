@@ -1,5 +1,6 @@
 package com.threegorges.demo.config;
 
+import com.threegorges.demo.domain.Employee;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

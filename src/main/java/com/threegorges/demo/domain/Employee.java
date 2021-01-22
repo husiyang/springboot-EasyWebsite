@@ -27,8 +27,8 @@ public class Employee implements Serializable {
 
     private String desc;
 
-    @ManyToMany
-    private Collection<Role> roles;
+    @OneToOne
+    private Role role;
 
     protected Employee(){
 
@@ -57,14 +57,14 @@ public class Employee implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = encodeByMD5(password);
+        this.password = (password);
     }
 
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
-    public void setRole(Collection<Role> roles){this.roles = roles;}
+    public void setRole(Role role){this.role = role;}
 
     public String getId() {
         return id;
@@ -82,11 +82,9 @@ public class Employee implements Serializable {
         return desc;
     }
 
-    public Collection<Role> getRole(){return roles;}
-
 
     public boolean isMatchUser(String password){
-        return this.password.equals(encodeByMD5(password));
+        return this.password.equals((password));
     }
 
     @Transient
@@ -97,8 +95,8 @@ public class Employee implements Serializable {
         Assert.hasText(oldPassword,"old is null");
         Assert.hasText(newPassword,"new is null");
         String v1 = this.password;
-        if(v1.equals(encodeByMD5(oldPassword))){
-            this.password = encodeByMD5(newPassword);
+        if(v1.equals((oldPassword))){
+            this.password = (newPassword);
             if (size > 2) return true;
             passwordArray[size] = this.password;
             size++;
@@ -114,7 +112,7 @@ public class Employee implements Serializable {
         return true;
     }
 
-    private String encodeByMD5(String plaintext) {
-        return DigestUtils.md5DigestAsHex(plaintext.getBytes());
-    }
+//    private String encodeByMD5(String plaintext) {
+//        return DigestUtils.md5DigestAsHex(plaintext.getBytes());
+//    }
 }
