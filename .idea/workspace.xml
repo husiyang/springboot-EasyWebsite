@@ -3,34 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="42689bf3-ca9d-4406-a97b-92db5aa0d414" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/config/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/config/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/controller/TableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/controller/TableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/domain/CurrentEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/domain/CurrentEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/domain/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/domain/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/domain/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/domain/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threegorges/demo/repository/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/demo.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/threegorges/demo/config/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/threegorges/demo/config/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/threegorges/demo/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/threegorges/demo/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/threegorges/demo/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/threegorges/demo/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/threegorges/demo/controller/TableController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/threegorges/demo/controller/TableController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/threegorges/demo/domain/CurrentEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/threegorges/demo/domain/CurrentEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/threegorges/demo/domain/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/threegorges/demo/domain/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/threegorges/demo/domain/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/threegorges/demo/domain/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/threegorges/demo/domain/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/threegorges/demo/domain/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/threegorges/demo/repository/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/common.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,6 +198,7 @@
       <workItem from="1611620034275" duration="14082000" />
       <workItem from="1611643628371" duration="9818000" />
       <workItem from="1611706449183" duration="1385000" />
+      <workItem from="1611708579094" duration="7160000" />
     </task>
     <servers />
   </component>
