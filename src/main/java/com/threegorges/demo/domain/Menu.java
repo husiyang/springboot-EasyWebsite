@@ -2,11 +2,10 @@ package com.threegorges.demo.domain;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "MENU")
 public class Menu {
 
     @Id
@@ -16,12 +15,24 @@ public class Menu {
 
     private String url;
 
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "ROLE_ID")
+    private Role role;
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     public void setMenuId(String menuId) {
         this.menuId = menuId;
     }
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Role getRole() {
+        return role;
     }
 
     public String getMenuId() {

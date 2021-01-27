@@ -1,34 +1,43 @@
 package com.threegorges.demo.domain;
 
-
-import com.threegorges.demo.repository.RoleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.threegorges.demo.repository.EmployeeRepository;
+import com.threegorges.demo.repository.MenuRepository;
 import org.springframework.ui.Model;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 public class CurrentEmployee {
     private Role role;
 
     private List<Menu> menus;
 
-    @Autowired private RoleRepository roleRepository;
+    private String name;
 
     public void setModel(Model model){
-        model.addAttribute("menus",menus);
-        model.addAttribute("role",role);
+        model.addAttribute("menus",this.menus);
+        model.addAttribute("role",this.role);
+        model.addAttribute("name",this.name);
     }
 
-    public CurrentEmployee(Employee employee){
-        this.role = roleRepository.findByEmployees(employee);
-        generateMenu(this.role);
+    public CurrentEmployee(Employee employee, EmployeeRepository employeeRepository, MenuRepository menuRepository){
+        this.role = employeeRepository.findByUsername(employee).getRole();
+        this.menus = menuRepository.findMenusByRole(this.role);
+        this.name = employee.getName();
     }
 
-    private void generateMenu(Role role){
-        List<Menu> m = new ArrayList<>();
-        m.addAll(role.getMenuList());
-        menus.addAll(m);
+    public Role getRole() {
+        return role;
     }
+
+    public List<Menu> getMenus() {
+        return menus;
+    }
+
+    //    private void generateMenu(Role role){
+//        List<Menu> m = new ArrayList<>();
+//        m.addAll(role.getMenuList());
+//        menus.addAll(m);
+//    }
 
 }

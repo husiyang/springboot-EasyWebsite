@@ -2,11 +2,9 @@ package com.threegorges.demo.domain;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.util.Assert;
-import org.springframework.util.DigestUtils;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
 
 
 @Entity
@@ -27,7 +25,8 @@ public class Employee implements Serializable {
 
     private String desc;
 
-    @OneToOne
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "ROLE_ID")
     private Role role;
 
     protected Employee(){
@@ -82,6 +81,9 @@ public class Employee implements Serializable {
         return desc;
     }
 
+    public Role getRole() {
+        return role;
+    }
 
     public boolean isMatchUser(String password){
         return this.password.equals((password));

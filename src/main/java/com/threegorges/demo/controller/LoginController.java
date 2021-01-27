@@ -3,6 +3,7 @@ package com.threegorges.demo.controller;
 import com.threegorges.demo.domain.CurrentEmployee;
 import com.threegorges.demo.domain.Employee;
 import com.threegorges.demo.repository.EmployeeRepository;
+import com.threegorges.demo.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
 
     @Autowired private EmployeeRepository employeeRepository;
+
+    @Autowired private MenuRepository menuRepository;
 
 
     /**
@@ -56,10 +59,10 @@ public class LoginController {
         Employee employee = new Employee(username);
         employee.setPassword(password);
         if (employeeRepository.findByUsername(employee).isMatchUser(password)) {
-            httpSession.setAttribute("loginEmployee", new CurrentEmployee(employee));
+            httpSession.setAttribute("loginEmployee",  new CurrentEmployee(employee,employeeRepository,menuRepository));
             CurrentEmployee currentEmployee = (CurrentEmployee) httpSession.getAttribute("loginEmployee");
             currentEmployee.setModel(model);
-            return "redirect:/user";
+            return "redirect:"+currentEmployee.getMenus().get(0).getUrl();
         } else {
             model.addAttribute("msg", "incorrect username or password");
             return "login";

@@ -1,6 +1,5 @@
 package com.threegorges.demo.config;
 
-import com.threegorges.demo.domain.Employee;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,8 +21,8 @@ public class LoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String s = request.getRequestURI();
-        log.info("拦截:{}",s);
+//        String s = request.getRequestURI();
+//        log.info("拦截:{}",s);
         HttpSession httpSession = request.getSession();
         Object o = httpSession.getAttribute("loginEmployee");
         if (o != null){

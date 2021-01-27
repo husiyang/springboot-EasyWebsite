@@ -18,10 +18,10 @@ public class Role implements Serializable {
 
     private String roleName;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(targetEntity=Employee.class, mappedBy="role")
     private Collection<Employee> employees;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(targetEntity=Menu.class, mappedBy="role")
     private Collection<Menu> menus = new ArrayList<>();
 
     public void setRoleId(String id){this.roleId = id;}
