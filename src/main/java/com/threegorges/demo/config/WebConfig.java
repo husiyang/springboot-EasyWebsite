@@ -17,11 +17,5 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new AdminInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns("/login","/register","/logout","/jquery-2.1.1.min.js","/css/**","/favicon.ico","/img/**","/js/**");
-//        registry.addInterceptor(new VIPInterceptor())
-//                .addPathPatterns("/**")
-//                .excludePathPatterns("/login","/register","/logout","/jquery-2.1.1.min.js","/css/**","/favicon.ico","/img/**","/js/**");
-//        registry.addInterceptor(new NormalInterceptor())
-//                .addPathPatterns("/**")
-//                .excludePathPatterns("/login","/register","/logout","/jquery-2.1.1.min.js","/css/**","/favicon.ico","/img/**","/js/**");
     }
 }

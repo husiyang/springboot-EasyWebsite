@@ -4,6 +4,7 @@ import com.threegorges.demo.domain.CurrentEmployee;
 import com.threegorges.demo.domain.Employee;
 import com.threegorges.demo.repository.EmployeeRepository;
 import com.threegorges.demo.repository.MenuRepository;
+import com.threegorges.demo.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,8 @@ public class LoginController {
     @Autowired private EmployeeRepository employeeRepository;
 
     @Autowired private MenuRepository menuRepository;
+
+    @Autowired private RoleRepository roleRepository;
 
 
     /**
@@ -79,6 +82,7 @@ public class LoginController {
     public String Register(@RequestParam("username") String username,@RequestParam("password") String password, Model model) {
         Employee employee = new Employee(username);
         employee.setPassword(password);
+        employee.setRole(roleRepository.findRoleByRoleId("1"));
         if (employeeRepository.findByUsername(employee) != null) {
             model.addAttribute("msg", "user has existed");
             return "register";

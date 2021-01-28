@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import java.util.List;
 
 
-public class CurrentEmployee {
+public class CurrentEmployee extends Employee{
     private Role role;
 
     private List<Menu> menus;
@@ -32,6 +32,10 @@ public class CurrentEmployee {
 
     public List<Menu> getMenus() {
         return menus;
+    }
+
+    public String getName() {
+        return name;
     }
 
     //    private void generateMenu(Role role){

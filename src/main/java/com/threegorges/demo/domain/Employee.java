@@ -6,6 +6,8 @@ import org.springframework.util.Assert;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import static com.threegorges.demo.Util.MD5.string2MD5;
+
 
 @Entity
 @Table(name = "EMPLOYEE")
@@ -56,7 +58,7 @@ public class Employee implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = (password);
+        this.password = encodeByMD5(password);
     }
 
     public void setDesc(String desc) {
@@ -86,7 +88,7 @@ public class Employee implements Serializable {
     }
 
     public boolean isMatchUser(String password){
-        return this.password.equals((password));
+        return this.password.equals(encodeByMD5(password));
     }
 
     @Transient
@@ -97,8 +99,8 @@ public class Employee implements Serializable {
         Assert.hasText(oldPassword,"old is null");
         Assert.hasText(newPassword,"new is null");
         String v1 = this.password;
-        if(v1.equals((oldPassword))){
-            this.password = (newPassword);
+        if(v1.equals(encodeByMD5(oldPassword))){
+            this.password = encodeByMD5(newPassword);
             if (size > 2) return true;
             passwordArray[size] = this.password;
             size++;
@@ -114,7 +116,7 @@ public class Employee implements Serializable {
         return true;
     }
 
-//    private String encodeByMD5(String plaintext) {
-//        return DigestUtils.md5DigestAsHex(plaintext.getBytes());
-//    }
+    private String encodeByMD5(String plaintext) {
+        return string2MD5(plaintext);
+    }
 }
